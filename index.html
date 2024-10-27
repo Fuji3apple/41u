@@ -36,12 +36,18 @@
             >
                 <a-entity
                     id="bowser-model"
-                    position="0 0 0"
+                    position="0 0.5 0"
                     scale="0.637 0.637 0.637"
                     animation-mixer="loop: repeat"
                     gltf-model="#animated-asset"
                     class="clickable"
                     gesture-handler
+
+                    <!-- Y軸方向の回転アニメーション -->
+                    animation="property: rotation; to: 0 360 0; loop: true; dur: 5000; easing: linear"
+
+                    <!-- Y軸方向の浮遊アニメーション -->
+                    animation__float="property: position; to: 0 0.7 0; dir: alternate; dur: 2000; loop: true; easing: easeInOutSine"
                 ></a-entity>
             </a-marker>
 
