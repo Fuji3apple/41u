@@ -24,7 +24,6 @@
                 url="assets/marker.patt"
                 emitevents="true"
             >
-                <!-- マーカーを完全に白く塗りつぶし -->
                 <a-entity 
                     geometry="primitive: plane; width: 0.; height: 0.9;"
                     material="shader: flat; color: #FFFFFF; opacity: 1; transparent: false;"
@@ -38,13 +37,11 @@
         </a-scene>
 
         <script>
-            // ズーム処理の設定
             document.querySelector('#scene').addEventListener('gesturechange', (event) => {
                 const camera = document.querySelector('#camera');
                 const scaleFactor = event.scale - 1;
                 const zoomChange = scaleFactor > 0 ? -0.05 : 0.05;
 
-                // 現在のズームレベルを取得・更新
                 const newZoom = camera.getAttribute('zoom') + zoomChange;
                 camera.setAttribute('zoom', Math.max(1, Math.min(newZoom, 10)));
             });
