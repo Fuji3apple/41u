@@ -55,8 +55,8 @@
         this.el.emit("arError", {error: 'VIDEO_FAIL'});
         });
         // モデルの生成間隔 (ミリ秒)
-        const spawnInterval = 500;
-        const maxModels = 25; // 最大のモデル数
+        const spawnInterval = 2500;
+        const maxModels = 5; // 最大のモデル数
         let modelCount = 0;
 
         function spawnModel() {
